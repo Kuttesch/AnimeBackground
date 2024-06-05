@@ -6,27 +6,43 @@ import os
 import argparse
 
 def get_input():
-    parser = argparse.ArgumentParser(description="You have to use either -WAIFU or -BLOWJOB or -NEKO or -TRAP")
-    parser.add_argument("-WAIFU", action="store_true", help="WAIFU ")
-    parser.add_argument("-BLOWJOB", action="store_true", help="BLOWJOB")
-    parser.add_argument("-NEKO", action="store_true", help="NEKO")
-    parser.add_argument("-TRAP", action="store_true", help="TRAP")
+    parser = argparse.ArgumentParser(description="Select one of the SFW or NSFW categories.")
+    
+    sfw_categories = [
+        "WAIFU", "NEKO", "SHINOBU", "MEGUMIN", "BULLY", "CUDDLE", "CRY", "HUG",
+        "AWOO", "KISS", "LICK", "PAT", "SMUG", "BONK", "YEET", "BLUSH", "SMILE",
+        "WAVE", "HIGHFIVE", "HANDHOLD", "NOM", "BITE", "GLOMP", "SLAP", "KILL",
+        "KICK", "HAPPY", "WINK", "POKE", "DANCE", "CRINGE"
+    ]
+
+    nsfw_categories = [
+        "WAIFU", "BLOJOB", "NEKO", "TRAP"
+    ]
+
+    for category in sfw_categories:
+        parser.add_argument(f"-SFW_{category}", action="store_true", help=f"{category.lower()} (SFW)")
+
+    for category in nsfw_categories:
+        parser.add_argument(f"-NSFW_{category}", action="store_true", help=f"{category.lower()} (NSFW)")
+
     args = parser.parse_args()
 
     if not any(vars(args).values()):
         url = "https://api.waifu.pics/nsfw/waifu"
     else:
-        url = "https://api.waifu.pics/nsfw/"
-        if args.WAIFU:
-            url += "waifu"
-        if args.BLOWJOB:
-            url += "blowjob"
-        if args.NEKO:
-            url += "neko"
-        if args.TRAP:
-            url += "trap"
-    return url
+        url = "https://api.waifu.pics/"
+        
+        for category in sfw_categories:
+            if getattr(args, f"SFW_{category}"):
+                url += f"sfw/{category.lower()}"
+                break
 
+        for category in nsfw_categories:
+            if getattr(args, f"NSFW_{category}"):
+                url += f"nsfw/{category.lower()}"
+                break
+
+    return url
 
 def get_data(url):
     print(url)
@@ -35,7 +51,6 @@ def get_data(url):
     data = response.json()
     pic_url = data.get('url')
     return pic_url
-
 
 def download_file(url, filename):
     response = requests.get(url, stream=True)
