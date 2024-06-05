@@ -52,6 +52,6 @@ url = get_input()
 url_string = get_data(url)
 filename = "pic.jpg"
 path = "./" + filename
-download_file(url_string, filename)
+download_file(url_string, path)
 time.sleep(1)
 set_background(path)
