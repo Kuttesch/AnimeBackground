@@ -16,7 +16,7 @@ def get_input():
     ]
 
     nsfw_categories = [
-        "WAIFU", "BLOJOB", "NEKO", "TRAP"
+        "WAIFU", "BLOWJOB", "NEKO", "TRAP"
     ]
 
     for category in sfw_categories:
