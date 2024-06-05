@@ -11,6 +11,7 @@ AnimeBackground is a Python project that allows you to set your desktop backgrou
   - [SFW Categories](#sfw-categories)
   - [NSFW Categories](#nsfw-categories)
 - [Known Bugs](#bugs)
+- [Future Features](#future-features)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -85,6 +86,10 @@ The following categories are available for the Waifu API:
 ## Bugs
 
 Currently, there are no known bugs. If you encounter any issues, please open an issue on the GitHub repository.
+
+## Future Features
+
+- I want to add an installer like in my [SysInfo](https://github.com/Kuttesch/SysInfo)-Script to install the script and add a Powershell Alias.
 
 ## Contributing
 
