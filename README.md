@@ -16,7 +16,7 @@ AnimeBackground is a Python project that allows you to set your desktop backgrou
 
 ## Why?
 
-I created this project to practice my Python skills and to learn how to interact with APIs. I found the [Waifu API](https://waifu.pics/docs) with my girlfriend and thought it would be a fun project to create a script that sets your desktop background to a random image from the API.
+I created this project to practice my Python skills and to learn how to interact with APIs. I found the [Waifu API](https://waifu.pics/docs) with my girlfriend and she thought it would be a fun project to create a script that sets your desktop background to a random image from the API.
 Through this project, I practiced working with APIs, JSON data, and setting desktop backgrounds with Python.
 
 ## Installation
