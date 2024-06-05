@@ -51,7 +51,8 @@ def set_background(filename):
 url = get_input()
 url_string = get_data(url)
 filename = "pic.jpg"
-path = os.path.join(os.getcwd(), filename)
+path = os.path.join(os.path.dirname(os.path.abspath(__file__)), filename)
 download_file(url_string, path)
+print(path)
 time.sleep(1)
 set_background(path)
