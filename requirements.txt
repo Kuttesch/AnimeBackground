@@ -1,0 +1,6 @@
+requests
+shutil
+ctypes
+time
+os
+argparse
